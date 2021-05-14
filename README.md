@@ -46,6 +46,8 @@ done!!
 
 # Conclusion - problems to fix
 > troubleshoot - typescript Property 'env' does not exist on type 'CypressNpmApi
+
 > trobleshoot - Cannot read property 'signals' of undefined
+
 > troubleshoot - vscode auto suggestion not working
 
