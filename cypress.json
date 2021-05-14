@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/integration",
+  "fixturesFolder": "cypress/fixtures",
+  "supportFile": "cypress/support/index.js",
+  "pluginsFile": "cypress/plugins/index.js",
+  "testFiles": "**/*.{feature,features}",
+  "viewportWidth": 1428,
+  "viewportHeight": 1000,
+  "chromeWebSecurity": false,
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "env": {
+    "email": "cypress.jsonexample@something.com"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "next-cypress-cucumber-boilerplate",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "cypress": "nyc --reporter=text-summary cypress run --headless"
+  },
+  "repository": {
+    "url": "https://github.com/inspiraller/next-cypress-cucumber-boilerplate.git"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "redux-devtools-extension": "^2.13.2"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@bahmutov/add-typescript-to-cypress": "^2.1.2",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "@cypress/code-coverage": "^3.9.5",
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@testing-library/cypress": "^7.0.6",
+    "@types/cypress-cucumber-preprocessor": "^4.0.0",
+    "@types/node": "^15.0.3",
+    "@types/react": "^17.0.5",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "^7.3.0",
+    "cypress-cucumber-preprocessor": "^4.1.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "nyc": "^15.1.0",
+    "redux": "^3.7.2",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  }
+}
