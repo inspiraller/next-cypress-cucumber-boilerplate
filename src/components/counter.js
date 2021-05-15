@@ -22,7 +22,7 @@ const Counter = () => {
   const { count, increment, decrement, reset } = useCounter()
   return (
     <div>
-      <h1>
+      <h1 data-testid={'count-h1'}>
         Count: <span>{count}</span>
       </h1>
       <button onClick={increment}>+1</button>

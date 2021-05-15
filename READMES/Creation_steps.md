@@ -26,9 +26,9 @@ npm i cypress --save-dev
 npx cypress open
 ```
 
-###  add cypress with typescript, typescript type support, cucumber, coverage with nyc and istanbul, eslint support, webpack to run custom cucumber config, babel configs for fixing cypress preprocessor
+###  add cross-env for passing NODE_ENV to babel, cypress with typescript, typescript type support, cucumber, coverage with nyc and istanbul, eslint support, webpack to run custom cucumber config, babel configs for fixing cypress preprocessor
 ```
-npm i @bahmutov/add-typescript-to-cypress @cypress/code-coverage @testing-library/cypress @types/cypress-cucumber-preprocessor cypress-cucumber-preprocessor @istanbuljs/nyc-config-typescript nyc babel-plugin-istanbul istanbul-lib-coverage babel-plugin-transform-class-properties @cypress/browserify-preprocessor --save-dev
+npm i cross-env @bahmutov/add-typescript-to-cypress @cypress/code-coverage @testing-library/cypress @types/cypress-cucumber-preprocessor cypress-cucumber-preprocessor @istanbuljs/nyc-config-typescript nyc babel-plugin-istanbul istanbul-lib-coverage babel-plugin-transform-class-properties @cypress/browserify-preprocessor --save-dev
 ```
 ### create cypress.json targeting cucumber and default environment variable
 ```json
@@ -78,6 +78,18 @@ module.exports = {
 };
 
 ```
+
+## update script with cross-env NODE_ENV=development - to ensure babel.config.js picks up development mode for coverage.
+**package.json** - script
+```
+{
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development next",
+  }
+}
+```
+
+
 > troubleshoot - missing instrumentation from babel console.log
 
 - solution - clear cache
@@ -191,3 +203,49 @@ npm run cypress
 ```
 > eror - Cannot read property 'signals' of undefined
 
+## Removing console.log inside babel.config.js fixes emmet???
+
+> error - Cannot read property 'signals' of undefined
+
+-------------------------------------------------------------------------------------
+# See creation steps
+[Creation Steps](READMES/Creation_steps.md)
+
+
+# Conclusion - problems to fix
+> troubleshoot - typescript Property 'env' does not exist on type 'CypressNpmApi
+> trobleshoot - Cannot read property 'signals' of undefined
+- fixed - as suggested DO NOT import cypress in steps.ts. Instead include via tsconfig
+**cypress/tsconfig.json**
+```json
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress"]
+  },
+  "include": ["**/*.ts"]
+}
+```
+
+> troubleshoot - vscode auto suggestion not working
+- fixed - removed console.log from babel.config.js
+
+> troublshoot - coverage missing
+- solution add .nycrc.json
+- clear all cache
+```
+rm -rf .nyc_output
+rm -rf node_modules/.cache
+rm -rf .next
+```
+- ensure package.json script
+```
+    "dev": "cross-env NODE_ENV=development next",
+```
+- rerun dev  then cypress
+```
+npm run dev
+npm run cypress
+```

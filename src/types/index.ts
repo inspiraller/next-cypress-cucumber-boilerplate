@@ -1,0 +1,1 @@
+export type TFuncSt = (str: string) => string;

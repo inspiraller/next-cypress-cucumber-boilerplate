@@ -19,8 +19,6 @@ Given(/I have environment variable ('[^\']*')/, (key) => {
   expect(email).to.be.a('string');
 });
 ```
-> troubleshoot - typescript Property 'env' does not exist on type 'CypressNpmApi
-
 
 # npm install
 ```
@@ -36,18 +34,4 @@ npm run cypress
 ```
 
 done!!
-
-> error - Cannot read property 'signals' of undefined
-
--------------------------------------------------------------------------------------
-# See creation steps
-[Creation Steps](READMES/Creation_steps.md)
-
-
-# Conclusion - problems to fix
-> troubleshoot - typescript Property 'env' does not exist on type 'CypressNpmApi
-
-> trobleshoot - Cannot read property 'signals' of undefined
-
-> troubleshoot - vscode auto suggestion not working
 

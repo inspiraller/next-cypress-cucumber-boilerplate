@@ -1,9 +1,13 @@
-console.log('process.env.NODE_ENV = ', process.env.NODE_ENV);
-if (process.env.NODE_ENV === 'development') {
-  console.log(
-    '########## instrumenting code coverage on starting dev environment #################################################'
-  );
-}
+
+// console.log(1);
+//console.log('process.env.NODE_ENV = ', process.env.NODE_ENV);
+
+// This breaks vscode emmet auto suggest
+// if (process.env.NODE_ENV === 'development') {
+//   console.log(
+//     '########## instrumenting code coverage on starting dev environment #################################################'
+//   );
+// }
 
 module.exports = {
   presets: ['next/babel'],
