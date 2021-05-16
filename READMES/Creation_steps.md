@@ -249,3 +249,7 @@ rm -rf .next
 npm run dev
 npm run cypress
 ```
+
+> troubleshoot - can't find coverage
+
+- solution make sure src/index.tsx not src/index.js - since coverage is only looking for typescript files.
